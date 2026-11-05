@@ -7,6 +7,28 @@ import heroImg from "@/assets/hero-scaffolding.jpg";
 
 export const images = { scaffoldImg, equipmentImg, ppeImg, industrialImg, hseImg, heroImg };
 
+export const siteUrl = "https://www.ckbconstruction.com.ng";
+export const shareImage = `${siteUrl}/og-image.jpg`;
+
+/** Tags chat apps read when someone pastes a link. Image must be an absolute URL. */
+export function shareMeta(title: string, description: string, path = "/") {
+  const url = new URL(path, siteUrl).toString();
+  return [
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:url", content: url },
+    { property: "og:image", content: shareImage },
+    { property: "og:image:secure_url", content: shareImage },
+    { property: "og:image:type", content: "image/jpeg" },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:image:alt", content: "CKB Construction Limited" },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image", content: shareImage },
+  ];
+}
+
 /**
  * Verified company contact details. Leave a value as null until CKB confirms it —
  * nothing is shown on the site for null values.

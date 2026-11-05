@@ -12,6 +12,7 @@ import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { shareMeta } from "@/lib/site";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { WhatsAppFloat } from "@/components/site/blocks";
 import { Toaster } from "@/components/ui/sonner";
@@ -83,6 +84,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "CKB Construction Limited" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...shareMeta(
+        "CKB Construction Limited",
+        "Scaffolding, construction equipment, PPE, industrial supplies and HSE manpower support in Nigeria.",
+      ),
     ],
     links: [
       { rel: "stylesheet", href: appCss },

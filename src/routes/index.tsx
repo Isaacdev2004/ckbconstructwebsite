@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { categories, images, industries, products } from "@/lib/site";
+import { categories, images, industries, products, shareMeta, siteUrl } from "@/lib/site";
 import { CtaBand, SectionHead } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/")({
@@ -8,10 +8,13 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "CKB Construction Limited — Construction & Industrial Supplies, Nigeria" },
       { name: "description", content: "Scaffolding systems, construction equipment, PPE, industrial supplies and HSE manpower support for Nigeria's construction and oil & gas sectors." },
-      { property: "og:title", content: "CKB Construction Limited — Construction & Industrial Supplies" },
-      { property: "og:description", content: "Scaffolding, equipment, PPE, industrial supplies and HSE manpower support for demanding project environments." },
       { property: "og:type", content: "website" },
+      ...shareMeta(
+        "CKB Construction Limited — Construction & Industrial Supplies",
+        "Scaffolding, equipment, PPE, industrial supplies and HSE manpower support for demanding project environments.",
+      ),
     ],
+    links: [{ rel: "canonical", href: siteUrl + "/" }],
   }),
   component: Home,
 });
