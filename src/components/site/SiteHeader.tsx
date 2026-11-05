@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
-import logo from "@/assets/ckb-logo.jpg.asset.json";
+import logo from "@/assets/ckb-logo.jpg";
 import { contact } from "@/lib/site";
 
 export const navItems = [
@@ -15,7 +15,7 @@ export const navItems = [
 ] as const;
 
 export function Logo({ className = "h-12" }: { className?: string }) {
-  return <img src={logo.url} alt="CKB Construction Limited" className={`${className} w-auto rounded-sm`} />;
+  return <img src={logo} alt="CKB Construction Limited" className={`${className} w-auto object-contain`} />;
 }
 
 export function SiteHeader() {
@@ -40,9 +40,9 @@ export function SiteHeader() {
           </div>
         </div>
       </div>
-      <div className="container-site flex h-20 items-center justify-between gap-6 border-b">
+      <div className="container-site flex h-24 items-center justify-between gap-6 border-b">
         <Link to="/" aria-label="CKB Construction Limited home" className="shrink-0">
-          <Logo className="h-14" />
+          <Logo className="h-20" />
         </Link>
         <nav className="hidden items-center gap-6 xl:flex" aria-label="Main">
           {navItems.map((n) => (

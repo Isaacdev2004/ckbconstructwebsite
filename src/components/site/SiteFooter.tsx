@@ -8,7 +8,7 @@ export function SiteFooter() {
     <footer className="bg-graphite text-on-dark-muted">
       <div className="container-site grid gap-12 py-16 md:grid-cols-12">
         <div className="md:col-span-4">
-          <div className="inline-block bg-background p-3"><Logo className="h-16" /></div>
+          <div className="inline-block bg-background p-3"><Logo className="h-28" /></div>
           <p className="mt-6 font-display text-lg font-bold uppercase leading-snug text-on-dark">
             Your trusted partner in construction &amp; industrial supplies.
           </p>
